@@ -5,10 +5,15 @@ const app = express();
 app.use(express.json());
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/criaturas', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log('🟢 MongoDB conectado');
+  } catch (error) {
+    console.error('🔴 Error de conexión:', error.message);
+    process.exit(1);
+  }
+};
 
 const rarities = ['comun', 'poco comun', 'raro', 'epico', 'legendario'];
 
@@ -67,7 +72,7 @@ app.delete('/criaturas/:id', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor iniciado en puerto ${PORT}`);
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`🚀 Servidor iniciado`});
 });
