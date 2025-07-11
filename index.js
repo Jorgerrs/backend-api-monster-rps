@@ -74,5 +74,6 @@ app.delete('/criaturas/:id', async (req, res) => {
 
 connectDB().then(() => {
   app.listen(PORT, () => {
-    console.log(`🚀 Servidor iniciado`});
+    console.log(`🚀Servidor iniciado`);
+  });
 });
