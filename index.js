@@ -35,8 +35,7 @@ app.get('/criaturas', async (req, res) => {
 
 app.post('/criaturas', async (req, res) => {
   try {
-    const criatura = new Criatura(req.body);
-    await criatura.save();
+    const criatura = await Criatura.create(req.body);
     res.status(201).json(criatura);
   } catch (err) {
     res.status(400).json({ error: err.message });
