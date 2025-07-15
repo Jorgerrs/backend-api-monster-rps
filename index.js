@@ -82,6 +82,11 @@ const usuarioSchema = new mongoose.Schema({
   email: { type: String, required: true },
   //hay que encriptar
   password: { type: String, required: true },
+  nivel: { type: Integer, required: true },
+  //cada 4 victorias subes de nivel
+  acumulado: { type: Integer, required: true },
+  victoria: { type: Integer, required: true },
+  derrota: { type: Integer, required: true },
   unlocked: { type: [String], required: false },
 });
 
