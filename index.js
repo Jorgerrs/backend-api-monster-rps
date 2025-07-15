@@ -85,7 +85,7 @@ const usuarioSchema = new mongoose.Schema({
   unlocked: { type: [String], required: false },
 });
 
-const Usuario = mongoose.model('Usuario', usuarioSchema);
+const Usuarios = mongoose.model('Usuario', usuarioSchema);
 
 // CRUD routes
 app.get('/usuarios', async (req, res) => {
