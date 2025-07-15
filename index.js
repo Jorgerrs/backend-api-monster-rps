@@ -24,7 +24,8 @@ const criaturaSchema = new mongoose.Schema({
   rareza: { type: String, enum: rarities, required: true },
   unlocked: { type: Boolean, required: true },
   imagen: { type: String, required: true },
-  ataques: { type: [String], validate: [arr => arr.length === 3, 'Deben ser tres ataques'] }
+  ataques: { type: [String], validate: [arr => arr.length === 3, 'Deben ser tres ataques'] },
+  descripcion: { type: String, required: true }
 });
 
 const Criatura = mongoose.model('Criatura', criaturaSchema);
