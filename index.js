@@ -82,12 +82,12 @@ const usuarioSchema = new mongoose.Schema({
   email: { type: String, required: true },
   //hay que encriptar
   password: { type: String, required: true },
-  nivel: { type: Integer, required: true },
+  nivel: { type: Number, required: true },
   //cada 4 victorias subes de nivel
-  acumulado: { type: Integer, required: true },
-  victoria: { type: Integer, required: true },
-  derrota: { type: Integer, required: true },
-  unlocked: { type: [String], required: false },
+  acumulado: { type: Number, required: true },
+  victoria: { type: Number, required: true },
+  derrota: { type: Number, required: true },
+  unlocked: { type: [String], required: false }
 });
 
 const Usuarios = mongoose.model('Usuario', usuarioSchema);
