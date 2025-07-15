@@ -22,6 +22,8 @@ const rarities = ['comun', 'poco comun', 'raro', 'epico', 'legendario'];
 const criaturaSchema = new mongoose.Schema({
   nombre: { type: String, required: true },
   rareza: { type: String, enum: rarities, required: true },
+  unlocked: { type: Boolean, required: true },
+  imagen: { type: String, required: true },
   ataques: { type: [String], validate: [arr => arr.length === 3, 'Deben ser tres ataques'] }
 });
 
