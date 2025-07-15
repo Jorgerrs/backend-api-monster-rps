@@ -16,7 +16,7 @@ const connectDB = async () => {
   }
 };
 
-const rarities = ['comun', 'poco comun', 'raro', 'epico', 'legendario'];
+const rarities = ['comun', 'poco comun', 'raro', 'epico', 'legendario','secreto'];
 
 // Schema and model
 const criaturaSchema = new mongoose.Schema({
