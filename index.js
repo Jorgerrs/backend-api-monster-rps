@@ -130,6 +130,7 @@ app.post('/login', async (req, res) => {
       acumulado: user.acumulado,
       victoria: user.victoria,
       derrota: user.derrota,
+      empate: user.empate,
       unlocked: user.unlocked
     });
   } catch (err) {
