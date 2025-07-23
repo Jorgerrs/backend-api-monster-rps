@@ -89,12 +89,13 @@ const usuarioSchema = new mongoose.Schema({
   acumulado: { type: Number, required: true },
   victoria: { type: Number, required: true },
   derrota: { type: Number, required: true },
+  empate: { type: Number, required: true },
   unlocked: { type: [String], required: false }
 });
 
 const Usuarios = mongoose.model('Usuario', usuarioSchema);
 
-// CRUD routes
+// CRUD routes usuario
 app.get('/usuarios', async (req, res) => {
   const usuarios = await Usuarios.find();
   res.json(usuarios);
@@ -106,6 +107,33 @@ app.post('/usuarios', async (req, res) => {
     res.status(201).json(usuarios);
   } catch (err) {
     res.status(400).json({ error: err.message });
+  }
+});
+
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await Usuarios.findOne({ email });
+
+    if (!user || user.password !== password) {
+      return res.status(401).json({ error: 'Credenciales incorrectas' });
+    }
+
+    // Podrías generar un token aquí si usas auth
+    res.json({
+      _id: user._id,
+      nombre: user.nombre,
+      alias: user.alias,
+      email: user.email,
+      nivel: user.nivel,
+      acumulado: user.acumulado,
+      victoria: user.victoria,
+      derrota: user.derrota,
+      unlocked: user.unlocked
+    });
+  } catch (err) {
+    res.status(500).json({ error: 'Error en el servidor' });
   }
 });
 
