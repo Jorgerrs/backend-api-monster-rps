@@ -22,4 +22,4 @@ Cada criatura posee los siguientes atributos:
 2. Instala las dependencias con `npm install` (requiere acceso a internet).
 3. Ejecuta `npm run dev` para iniciar el servidor en modo de desarrollo.
 
-La API quedará disponible en `http://localhost:3000`.
+La API quedará disponible en `https://backend-api-criaturas.onrender.com/criaturas`.
