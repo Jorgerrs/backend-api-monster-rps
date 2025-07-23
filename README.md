@@ -2,7 +2,7 @@
 
 Esta API permite gestionar criaturas mágicas con diferentes rarezas. Está desarrollada con **Node.js**, **Express** y **MongoDB** usando Mongoose.
 
-## Endpoints principales
+## Endpoints principales para criaturas
 
 - `GET /criaturas` – Lista todas las criaturas.
 - `POST /criaturas` – Crea una nueva criatura.
@@ -16,6 +16,27 @@ Cada criatura posee los siguientes atributos:
 - `rareza`: una de `comun`, `poco comun`, `raro`, `epico`, `legendario`
 - `ataques`: arreglo de tres ataques
 
+## Endpoints principales para usuarios
+
+- `GET /usuarios` – Lista todas las criaturas.
+- `POST /usuarios` – Crea una nueva criatura.
+- `GET /usuarios/:id` – Obtiene una criatura por su id.
+- `PUT /usuarios/:id` – Actualiza una criatura existente.
+- `DELETE /usuarios/:id` – Elimina una criatura.
+
+Cada criatura posee los siguientes atributos:
+
+- `nombre`: nombre del usuario
+- `alias`: alias del usuario
+- `email`: email del usuario
+- `password`: contraseña del usuario
+- `nivel`: nivel del usuario
+- `acumulado`: numeor de mounstros derrotados para subir de nivel del usuario
+- `victoria`: victorias del usuario
+- `derrota`: derrotas del usuario
+- `empate`: empates del usuario
+- `unlocked`: lista de IDs de criaturas desbloqueadas
+  
 ## Puesta en marcha
 
 1. Asegúrate de tener MongoDB corriendo y define la variable `MONGODB_URI` si deseas usar otra conexión.
