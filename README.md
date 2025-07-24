@@ -44,3 +44,8 @@ Cada criatura posee los siguientes atributos:
 3. Ejecuta `npm run dev` para iniciar el servidor en modo de desarrollo.
 
 La API quedará disponible en `https://backend-api-criaturas.onrender.com/criaturas`.
+
+## Mejoras para un futuro
+
+1. Encriptar la contraseña ya que esta en texto plano
+2. Comprobar en el registro si el email esta ya dado de alta
