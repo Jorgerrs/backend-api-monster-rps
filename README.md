@@ -49,3 +49,4 @@ La API quedará disponible en `https://backend-api-criaturas.onrender.com/criatu
 
 1. Encriptar la contraseña ya que esta en texto plano
 2. Comprobar en el registro si el email esta ya dado de alta
+3. Seccionar el codigo para que quede mas limpio
